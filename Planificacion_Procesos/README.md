@@ -1,11 +1,6 @@
 # Simulador de Planificación de Procesos  
-Sistemas Operativos – Tarea 3  
-Equipo 10
-Karina Hernández FLores
-317346404
+Tarea 3 - Karina Hernández Flores - 317346404
 ---
-
-## Descripción General
 
 Este proyecto consiste en la implementación de un simulador de planificación de procesos en lenguaje C.
 
@@ -14,7 +9,7 @@ Se implementaron los siguientes algoritmos:
 - First-Come, First-Served (FCFS)
 - Round Robin (RR)
 
-El simulador:
+El simulador realiza lo siguiente:
 
 - Lee una lista de procesos desde la entrada estándar.
 - Genera la línea de tiempo de ejecución.
@@ -50,9 +45,8 @@ gcc -O2 -Wall simuladorPlanProcesos.c -o simuladorPlanProcesos
 
 ### 1. First-Come, First-Served (FCFS)
 
-Algoritmo no apropiativo que ejecuta los procesos en el orden en que llegan al sistema.
-
-Una vez que un proceso obtiene la CPU, la conserva hasta terminar su ráfaga.
+Algoritmo no apropiativo que ejecuta los procesos en el orden en que llegan al sistema. 
+Una vez que un proceso obtiene la CPU, la conserva hasta terminar.
 
 #### Ventajas
 - Implementación sencilla.
@@ -66,10 +60,7 @@ Una vez que un proceso obtiene la CPU, la conserva hasta terminar su ráfaga.
 ### 2. Round Robin (RR)
 
 Algoritmo apropiativo que asigna a cada proceso un intervalo fijo llamado quantum.
-
-Si el proceso no termina en ese intervalo:
-- Se interrumpe.
-- Se coloca al final de la cola.
+Si el proceso no termina en ese intervalo, se interrumpe y se coloca al final de la cola.
 
 #### Ventajas
 - Distribución equitativa del CPU.
@@ -77,8 +68,8 @@ Si el proceso no termina en ese intervalo:
 - Ideal para sistemas interactivos.
 
 #### Desventajas
-- Quantum pequeño → muchos cambios de contexto.
-- Quantum grande → comportamiento similar a FCFS.
+- Un quantum pequeño implica muchos cambios de contexto.
+- Un quantum grande implica un comportamiento similar a FCFS.
 
 ---
 
@@ -113,37 +104,48 @@ También se calculan los promedios para cada algoritmo.
 
 ## Casos de Prueba Utilizados
 
-### Archivo con 100 procesos
-
-Se utilizó el archivo `Procesos.txt` proporcionado en la actividad para evaluar el desempeño y se obtuvieron los siguientes resultados.
----
+Se utilizó el archivo `Procesos.txt` que contiene 100 procesos para evaluar el desempeño y se obtuvieron los siguientes resultados.
 
 #### FCFS (First-Come, First-Served)
 Promedios:
+
   Waiting (espera)     : 194.00
+
   Turnaround (retorno) : 200.00
+  
   Response (respuesta) : 194.00
 
 ---
 #### RR (Round Robin), quantum=4
 Promedios:
+
   Waiting (espera)     : 240.64
+
   Turnaround (retorno) : 246.64
+  
   Response (respuesta) : 122.82
  
 ---
 #### RR (Round Robin), quantum=3
 Promedios:
+  
   Waiting (espera)     : 263.60
+  
   Turnaround (retorno) : 269.60
+  
   Response (respuesta) : 98.68
 
 ---
 #### RR (Round Robin), quantum=5
+
 Promedios:
+
   Waiting (espera)     : 246.65
+  
   Turnaround (retorno) : 252.65
+  
   Response (respuesta) : 141.31
+
 ---
 
 ## Resultados Comparativos
@@ -233,6 +235,7 @@ En FCFS, un proceso corto puede quedar esperando detrás de uno largo.
 - RR es justo en distribución de CPU.
 
 En sistemas actuales, se puede considerar que Round Robin más equitativo.
+
 ---
 ## Conclusión
 

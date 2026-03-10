@@ -4,9 +4,9 @@
 #define NODES 4
 
 // Índices de nodos
-// 0 = P1, 1 = P2, 2 = R1, 3 = R2
+// 0 = T1, 1 = T2, 2 = R1, 3 = R2
 
-const char *names[NODES] = {"P1", "P2", "R1", "R2"};
+const char *names[NODES] = {"T1", "T2", "R1", "R2"};
 
 int graph[NODES][NODES] = {0};
 
@@ -78,7 +78,7 @@ int main() {
     print_graph();
 
     if (has_cycle()) {
-        printf("\nSe detecto un ciclo en el grafo.\n");
+        printf("\nSe detecto un ciclo en el grafo.\n\n");
         printf("Conclusion: existe DEADLOCK.\n");
     } else {
         printf("\nNo se detecto ningun ciclo.\n");

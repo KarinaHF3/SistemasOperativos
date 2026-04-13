@@ -64,14 +64,14 @@ int has_cycle() {
 
 int main() {
     // Asignaciones:
-    // R1 -> P1
-    // R2 -> P2
+    // R1 -> T1
+    // R2 -> T2
     add_edge(2, 0);
     add_edge(3, 1);
 
     // Solicitudes:
-    // P1 -> R2
-    // P2 -> R1
+    // T1 -> R2
+    // T2 -> R1
     add_edge(0, 3);
     add_edge(1, 2);
 

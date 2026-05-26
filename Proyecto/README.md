@@ -3,7 +3,9 @@
 ## Datos
 
 Karina Hernández Flores
+
 Número de cuenta: 317346404
+
 Semestre 2026-2
 
 
@@ -34,7 +36,7 @@ Implementar una herramienta sencilla de monitoreo del sistema que permita aplica
 ## Estructura del proyecto
 
 ```text
-monitor-so/
+Proyecto/
 ├── src/
 │   └── main.c
 └── README.md

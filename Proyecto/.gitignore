@@ -1,0 +1,42 @@
+# Ejecutable generado
+monitor
+
+# Archivos objeto
+*.o
+*.obj
+
+# Librerías compiladas
+*.so
+*.a
+
+# Archivos temporales
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Archivos de depuración
+*.dSYM/
+
+# VS Code
+.vscode/
+
+# IntelliJ / CLion
+.idea/
+*.iml
+
+# Carpetas de compilación
+bin/
+build/
+out/
+
+# Archivos compilados Java
+*.class
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

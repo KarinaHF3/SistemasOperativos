@@ -35,12 +35,13 @@ Implementar una herramienta de monitoreo del sistema que permita aplicar concept
 
 ```text
 Proyecto/
-├── src/
-│   └── main.c
-├── README.md
 ├── Makefile
-├── Proyecto_SO_HFK.pdf
-└── .gitignore
+├── .gitignore
+├── README.md
+├── src
+│   └── main.c
+└── tests
+    └── consumir_ram.py
 ```
 
 ---
@@ -122,6 +123,68 @@ Durante el desarrollo se utilizaron diversas funciones relacionadas con acceso a
 
 ---
 
+## Pruebas de funcionamiento
+
+El proyecto incluye herramientas auxiliares dentro de la carpeta `tests/` para generar carga artificial sobre el sistema y validar el comportamiento dinámico del monitor.
+
+### Prueba de CPU
+
+Para generar carga de CPU se puede utilizar el siguiente comando en una o varias terminales:
+
+```bash
+yes > /dev/null
+```
+
+Este comando genera texto infinitamente y redirige la salida hacia `/dev/null`, provocando un incremento artificial del uso del procesador.
+
+Al ejecutar múltiples instancias del comando en distintas terminales es posible observar:
+
+- aumento en el porcentaje de uso de CPU,
+- incremento del load average,
+- cambio dinámico de colores y barras del monitor.
+
+Para detener la prueba:
+
+```text
+Ctrl + C
+```
+
+---
+
+### Prueba de RAM y SWAP
+
+Dentro de la carpeta `tests/` se incluye el script:
+
+```text
+tests/consumir_ram.py
+```
+
+Este script reserva memoria RAM progresivamente para forzar presión de memoria y eventualmente provocar uso de memoria SWAP.
+
+### Ejecución
+
+Desde la raíz del proyecto ejecutar:
+
+```bash
+python3 tests/consumir_ram.py
+```
+
+El script reserva aproximadamente 150 MB de memoria cada 0.5 segundos.
+
+Durante la ejecución es posible observar:
+
+- incremento gradual de uso de RAM,
+- disminución de memoria disponible,
+- inicio de utilización de SWAP cuando la RAM comienza a saturarse,
+- posible degradación del rendimiento del sistema bajo alta presión de memoria.
+
+Para detener la prueba:
+
+```text
+Ctrl + C
+```
+
+---
 ## Interfaz del monitor
 
 El sistema implementa una interfaz básica en terminal inspirada en herramientas de monitoreo como `htop`, mostrando barras visuales para CPU, RAM y SWAP.
